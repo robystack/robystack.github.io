@@ -1,6 +1,6 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteBase /yellow/
+
 DirectoryIndex index.html yellow.php
 RewriteRule ^(cache|content|system)/ error [L]
 RewriteCond %{REQUEST_FILENAME} !-f
