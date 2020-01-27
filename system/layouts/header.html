@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="<?php echo $this->yellow->page->getHtml("language") ?>">
+<head>
+<title><?php echo $this->yellow->page->getHtml("titleHeader") ?></title>
+<meta charset="utf-8" />
+<meta name="description" content="<?php echo $this->yellow->page->getHtml("description") ?>" />
+<meta name="author" content="<?php echo $this->yellow->page->getHtml("author") ?>" />
+<meta name="generator" content="Datenstrom Yellow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<?php $resourceLocation = $this->yellow->system->get("coreServerBase").$this->yellow->system->get("coreResourceLocation") ?>
+<link rel="icon" type="image/png" href="<?php echo $resourceLocation.$this->yellow->page->getHtml("theme")."-icon.png" ?>" />
+<?php echo $this->yellow->page->getExtra("header") ?>
+</head>
+<body>
+<div class="<?php echo "page layout-".$this->yellow->page->getHtml("layout") ?>">
+<div class="header" role="banner">
+<div class="sitename">
+<h1><a href="<?php echo $this->yellow->page->getBase(true)."/" ?>"><i class="sitename-logo"></i><?php echo $this->yellow->page->getHtml("sitename") ?></a></h1>
+<?php if ($page = $this->yellow->content->shared("header")) $this->yellow->page->setPage("header", $page) ?>
+<?php if ($this->yellow->page->isPage("header")) echo $this->yellow->page->getPage("header")->getContent() ?>
+</div>
+<div class="sitename-banner"></div>
+<?php $this->yellow->layout("navigation") ?>
+</div>
